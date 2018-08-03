@@ -583,8 +583,8 @@ void checkCoreBoardInfo(void)
           DEBUG_PRINT((uint8_t*)"Receive Videos tirggle cmd from coreboard",1);
           /* 发送开闸指令到道闸 */
           gCoreBoardReceiveInfo[2]  = 0x01;
-          DS_SendDataToLeftDoorBoard(gCoreBoardReceiveInfo,gCoreBoardReceiveInfoLength,0x0F);
           DS_SendDataToRightDoorBoard(gCoreBoardReceiveInfo,gCoreBoardReceiveInfoLength,0x0F);
+          DS_SendDataToLeftDoorBoard(gCoreBoardReceiveInfo,gCoreBoardReceiveInfoLength,0x0F);
           gSendAndReceiveFlag = 1;//写发送开闸指令标记，用来进行接收时的标记
           gMachineStateFlag = SOFT_TIGGER_STATE; //进入视频流触发模式
         }
@@ -610,7 +610,7 @@ void checkLeftDoorInfo(void)
   if(gLeftDoorBoardInfoFlag)
   {
     gLeftDoorBoardInfoFlag = 0;
-    DEBUG_PRINT((uint8_t*)"Receive bytes from left door board",1);
+    DEBUG_PRINT((uint8_t*)"Receive bytes from left door board",2);
     printf("the uart2 rx_lenth is %d:\n %s\r\n",gLeftDoorBoardReceiveInfoLength,gLeftDoorBoardReceiveInfo);
     DS_SendDataToLeftDoorBoard(gLeftDoorBoardReceiveInfo,gLeftDoorBoardReceiveInfoLength,0x0F);
     if(0x5B == gLeftDoorBoardReceiveInfo[0] && 0x5D == gLeftDoorBoardReceiveInfo[gLeftDoorBoardReceiveInfoLength - 1])
@@ -649,7 +649,7 @@ void checkRightDoorInfo(void)
   if(gRightDoorBoardInfoFlag)
   {
     gRightDoorBoardInfoFlag = 0;
-    DEBUG_PRINT((uint8_t*)"Receive bytes from right door board",1);
+    DEBUG_PRINT((uint8_t*)"Receive bytes from right door board",2);
 //#if 1 == DEBUG
     printf("the uart2 rx_lenth is %d:\n %s\r\n",gRightDoorBoardReceiveInfoLength,gRightDoorBoardReceiveInfo);
 //#endif
