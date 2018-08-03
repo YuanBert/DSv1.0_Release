@@ -1,0 +1,85 @@
+Configuration	DSPro
+STM32CubeMX 	4.26.0
+Date	07/27/2018
+MCU	STM32F103RCTx
+
+
+
+PERIPHERALS	MODES	FUNCTIONS	PINS
+ADC1	Single-ended	ADC1_TempSens_Input	VP_ADC1_TempSens_Input
+ADC2	IN12	ADC2_IN12	PC2
+RCC	Crystal/Ceramic Resonator	RCC_OSC_IN	PD0-OSC_IN
+RCC	Crystal/Ceramic Resonator	RCC_OSC_OUT	PD1-OSC_OUT
+SPI1	Full-Duplex Master	SPI1_MISO	PA6
+SPI1	Full-Duplex Master	SPI1_MOSI	PA7
+SPI1	Full-Duplex Master	SPI1_SCK	PA5
+SYS	Serial Wire	SYS_JTCK-SWCLK	PA14
+SYS	Serial Wire	SYS_JTMS-SWDIO	PA13
+SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
+TIM3	PWM Generation CH1	TIM3_CH1	PB4
+TIM4	Internal Clock	TIM4_VS_ClockSourceINT	VP_TIM4_VS_ClockSourceINT
+TIM5	Internal Clock	TIM5_VS_ClockSourceINT	VP_TIM5_VS_ClockSourceINT
+USART1	Asynchronous	USART1_RX	PA10
+USART1	Asynchronous	USART1_TX	PA9
+USART2	Asynchronous	USART2_RX	PA3
+USART2	Asynchronous	USART2_TX	PA2
+USART3	Asynchronous	USART3_RX	PB11
+USART3	Asynchronous	USART3_TX	PB10
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+2	PC13-TAMPER-RTC	GPIO_Output	CommunicationLED
+5	PD0-OSC_IN	RCC_OSC_IN	
+6	PD1-OSC_OUT	RCC_OSC_OUT	
+8	PC0	GPIO_Output	CTR485B_EN
+9	PC1	GPIO_Output	CTR485A_EN
+10	PC2	ADC2_IN12	LightSensor
+16	PA2	USART2_TX	BSPA_TX
+17	PA3	USART2_RX	BSPA_RX
+20	PA4*	SPI1_NSS	W25Q64_NSS
+21	PA5	SPI1_SCK	W25Q64_SCK
+22	PA6	SPI1_MISO	W25Q64_MISO
+23	PA7	SPI1_MOSI	W25Q64_MOSI
+24	PC4	GPIO_Input	GentleSensor
+29	PB10	USART3_TX	BSPB_TX
+30	PB11	USART3_RX	BSPB_RX
+33	PB12	GPIO_Output	MCUAtmosphereLEDR
+34	PB13	GPIO_Output	MCUAtmosphereLEDG
+37	PC6	GPIO_Output	MCU_DS18B20
+42	PA9	USART1_TX	CoreBoard_TX
+43	PA10	USART1_RX	CoreBoard_RX
+46	PA13	SYS_JTMS-SWDIO	
+49	PA14	SYS_JTCK-SWCLK	
+56	PB4	TIM3_CH1	MCU_LED_PWM
+57	PB5	GPIO_Output	MCU_FAN_OUT
+58	PB6	GPIO_Output	MCU_LED_OUT
+62	PB9	GPIO_Output	RunningLED
+
+
+
+SOFTWARE PROJECT
+
+Project Settings : 
+Project Name : DSPro
+Project Folder : C:\Users\bertz\Desktop\DSv1.0_Release\DSPro
+Toolchain / IDE : MDK-ARM V5
+Firmware Package Name and Version : STM32Cube FW_F1 V1.6.1
+
+
+Code Generation Settings : 
+STM32Cube Firmware Library Package : Copy all used libraries into the project folder
+Generate peripheral initialization as a pair of '.c/.h' files per peripheral : Yes
+Backup previously generated files when re-generating : No
+Delete previously generated files when not re-generated : Yes
+Set all free pins as analog (to optimize the power consumption) : No
+
+
+Toolchains Settings : 
+Compiler Optimizations : Balanced Size/Speed
+
+
+
+
+
+
