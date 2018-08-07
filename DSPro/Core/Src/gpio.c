@@ -39,14 +39,14 @@ void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, CommunicationLED_Pin|CTR485B_EN_Pin|CTR485A_EN_Pin|MCU_DS18B20_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, CommunicationLED_Pin|CTR485A_EN_Pin|MCU_DS18B20_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, MCUAtmosphereLEDR_Pin|MCUAtmosphereLEDG_Pin|MCU_FAN_OUT_Pin|MCU_LED_OUT_Pin 
+  HAL_GPIO_WritePin(GPIOB, MCUAtmosphereLEDR_Pin|MCUAtmosphereLEDG_Pin|MCU_FAN_OUT_Pin|MCU_LED_OUT_Pin |CTR485B_EN_Pin 
                           |RunningLED_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : PCPin PCPin PCPin PCPin */
-  GPIO_InitStruct.Pin = CommunicationLED_Pin|CTR485B_EN_Pin|CTR485A_EN_Pin|MCU_DS18B20_Pin;
+  GPIO_InitStruct.Pin = CommunicationLED_Pin|CTR485A_EN_Pin|MCU_DS18B20_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
@@ -59,7 +59,7 @@ void MX_GPIO_Init(void)
 
   /*Configure GPIO pins : PBPin PBPin PBPin PBPin 
                            PBPin */
-  GPIO_InitStruct.Pin = MCUAtmosphereLEDR_Pin|MCUAtmosphereLEDG_Pin|MCU_FAN_OUT_Pin|MCU_LED_OUT_Pin 
+  GPIO_InitStruct.Pin = MCUAtmosphereLEDR_Pin|MCUAtmosphereLEDG_Pin|MCU_FAN_OUT_Pin|MCU_LED_OUT_Pin |CTR485B_EN_Pin
                           |RunningLED_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;

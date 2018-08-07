@@ -21,8 +21,8 @@
 
 #define CommunicationLED_Pin GPIO_PIN_13
 #define CommunicationLED_GPIO_Port GPIOC
-#define CTR485B_EN_Pin GPIO_PIN_0
-#define CTR485B_EN_GPIO_Port GPIOC
+#define CTR485B_EN_Pin GPIO_PIN_14
+#define CTR485B_EN_GPIO_Port GPIOB
 #define CTR485A_EN_Pin GPIO_PIN_1
 #define CTR485A_EN_GPIO_Port GPIOC
 #define LightSensor_Pin GPIO_PIN_2
